@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+<html ng-app="app">
+<head>
+    <title></title>
+    <style>
+        body {
+            background: white;
+        }
+
+        #myHTML {
+            background: white;
+        }
+
+        table {
+            width: 100%;
+            padding-left: 5%;
+            padding-right: 5%;
+            padding-top: 2px;
+        }
+
+        tr, td, th {
+            text-align: center;
+            border: 1px solid gray;
+        }
+    </style>
+</head>
+<body ng-controller="myCtrl">
+    <input type="radio" name="response" data-ng-model="isSmall" ng-click="switchData(isSmall)" data-ng-value="true" />
+    Samll Data
+    <input type="radio" name="response" data-ng-model="isSmall" ng-click="switchData(isSmall)" data-ng-value="false" />
+    Big Data
+    <button ng-click="normal()">Normal</button>
+    <button ng-click="withOutSpliNormal()">Normal with png</button>
+    <button ng-click="clearOneImage()">Clear & One Page</button>
+    <button ng-click="clearMutiplePage()">Clear & Mutiple Page</button>
+    <div style="width: 100%" id="myHTML">
+
+        <table>
+            <thead>
+            <tr>
+                <th>Name</th>
+                <th>Roll</th>
+                <th>Addess</th>
+                <th>Religion</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="d in dataList">
+                <td>{{d.name}}</td>
+                <td>{{d.roll}}</td>
+                <td>{{d.addess}}</td>
+                <td>{{d.religion}}</td>
+            </tr>
+            </tbody>
+        </table>
+        
+    </div>
+
+    <script src="script/jquery.min.js"></script>
+    <script src="script/html2canvas.js"></script>
+    <!--<script src="script/jquery.plugin.html2canvas.js"></script>-->
+    <script src="script/jspdf.mychanges.js"></script>
+    <script src="script/jspdf.min.js"></script>
+    <script src="script/canvas-toBlob.js"></script>
+    <script src="script/angular.js"></script>
+    <script src="script/app.js"></script>
+</body>
+</html>
